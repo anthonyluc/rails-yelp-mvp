@@ -1,0 +1,17 @@
+<h1><%= @restaurant.name %></h1>
+Address : <%= @restaurant.address %><br />
+Phone : <%= @restaurant.phone_number %><br />
+Category : <%= @restaurant.category %>
+<br> <br>
+
+
+
+
+<%= link_to 'All restaurants', restaurants_path, { class:'btn btn-primary' } %> <br><br>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant.id), { class:'btn btn-default' } %>
+
+<%= link_to "Delete", restaurant_path(@restaurant.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+<%= link_to 'Reviews', restaurant_reviews_path(@restaurant.id), { class:'btn btn-primary' } %>
